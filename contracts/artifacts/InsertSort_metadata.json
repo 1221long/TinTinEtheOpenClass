@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "inArray",
+						"type": "uint256[]"
+					}
+				],
+				"name": "resortUintArray",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/t_InsertionSort.sol": "InsertSort"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/t_InsertionSort.sol": {
+			"keccak256": "0xf02414c35b0690d4fb25b892978958554a2ba6a2ae18928e2bc9957c42837b9d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://69b10233cd1e73d26e643754f5f6e09708e2dca6a4b52bad60079d08e4c964bc",
+				"dweb:/ipfs/QmQLct9R85WKqz4GKUKSx9ddpNCBXWNhsULPKDwdykZ4Kz"
+			]
+		}
+	},
+	"version": 1
+}
