@@ -271,6 +271,10 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -329,11 +333,11 @@
 			]
 		},
 		"contracts/t_ref_op_NFTSwap.sol": {
-			"keccak256": "0x7b8a9051f4249acacffd24af3f979badcbcf484d4917d9e0f3a21e45cfc72b7c",
+			"keccak256": "0x66f32ab444add2620b21ed6f23068bf7f1c4b8a6ac9a5d008203c392a2373534",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://855b1a522de0b96a3beed60c34d241a7e5b322bb09f46a0feed89b569647b234",
-				"dweb:/ipfs/QmPeubKvFe5Xqd1CAngtSa7pQfcA38v3dqKs87b9uUKLja"
+				"bzz-raw://0b81faa414a5248213d82620882093a646f50692828c161e7d5ee3975928cb23",
+				"dweb:/ipfs/QmYshJN21aPLfqgMAvGqYKaYcxH2mJ5AS1hjRC2U4XNDhZ"
 			]
 		}
 	},

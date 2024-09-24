@@ -22,12 +22,14 @@ contract NTFSwap is IERC721Receiver {
 
     fallback() external payable{}
 
+    receive() external payable { }
+
     // 实现{IERC721Receiver}的onERC721Received，能够接收ERC721代币
     function onERC721Received (
         address operator,
         address from,
         uint tokenId,
-        bytes calldata data
+        // bytes calldata data
     ) external override returns (bytes4){
         return IERC721Receiver.onERC721Received.selector;
     }
