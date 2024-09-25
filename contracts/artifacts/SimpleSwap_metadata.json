@@ -6,7 +6,18 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "_token0",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "_token1",
+						"type": "address"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -127,17 +138,85 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "dst",
+						"name": "sender",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "wad",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
 						"type": "uint256"
 					}
 				],
-				"name": "Deposit",
+				"name": "Burn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"name": "Mint",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountIn",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountOut",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					}
+				],
+				"name": "Swap",
 				"type": "event"
 			},
 			{
@@ -166,27 +245,28 @@
 				"type": "event"
 			},
 			{
-				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "src",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "amount0Input",
+						"type": "uint256"
 					},
 					{
-						"indexed": false,
 						"internalType": "uint256",
-						"name": "wad",
+						"name": "amount1Input",
 						"type": "uint256"
 					}
 				],
-				"name": "Withdraw",
-				"type": "event"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "fallback"
+				"name": "addLiquidity",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "liquidity",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -269,10 +349,32 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "deposit",
-				"outputs": [],
-				"stateMutability": "payable",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reserveIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reserveOut",
+						"type": "uint256"
+					}
+				],
+				"name": "getAmountOut",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountOut",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -289,6 +391,90 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "liquidity",
+						"type": "uint256"
+					}
+				],
+				"name": "removeLiquidity",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reserve0",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reserve1",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenOutMin",
+						"type": "uint256"
+					}
+				],
+				"name": "swap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "tokenOut",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "symbol",
 				"outputs": [
@@ -296,6 +482,32 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token0",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token1",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -366,23 +578,6 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "withdraw",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -488,7 +683,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/t3_weth.sol": "WETH"
+			"contracts/t3_waa.sol": "SimpleSwap"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -542,12 +737,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/t3_weth.sol": {
-			"keccak256": "0x13c29196722b733fd93cf47793fe860d6a1b30e5a8c86762c89690907165115a",
+		"contracts/t3_waa.sol": {
+			"keccak256": "0x3127dc2efa79167ea1516287ba0716195ba94f5cf7709a41dfeaefa6a608799c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5ad99e1ba6417ac50e3e53c18c9229d6181e897ebaac0c3435bfeb4840b20a34",
-				"dweb:/ipfs/Qme4VoLZqUZQfDaqo6xHDMyH11FgCJvEWi2sSv8uUbHmqs"
+				"bzz-raw://dd035debc6c68660b34836123d1526edb911506800d82753d6c6ad2b8ff883dc",
+				"dweb:/ipfs/QmaL51BBJ2ogZbyh91fFTAGVQ7MEaJau49ELZLpw6WPsJn"
 			]
 		}
 	},
