@@ -2,8 +2,8 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import {IERC721} from "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import {IERC721Receiver} from "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 
 contract NTFSwap is IERC721Receiver {
 
@@ -29,8 +29,8 @@ contract NTFSwap is IERC721Receiver {
         address operator,
         address from,
         uint tokenId,
-        // bytes calldata data
-    ) external override returns (bytes4){
+        bytes calldata data
+    ) external override returns (bytes4) {
         return IERC721Receiver.onERC721Received.selector;
     }
 

@@ -9,7 +9,7 @@ pragma solidity >=0.7.0 <0.9.0;
 // contract address: 0xd2a5bC10698FD955D1Fe6cb468a17809A08fd005
 // person address: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
 
-import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract WETH is ERC20 {
 

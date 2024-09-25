@@ -3,7 +3,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 // import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract OpApe is ERC721 {
     uint public MAX_APES = 10000;

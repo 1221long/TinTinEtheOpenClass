@@ -127,25 +127,6 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "dst",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "wad",
-						"type": "uint256"
-					}
-				],
-				"name": "Deposit",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
 						"name": "from",
 						"type": "address"
 					},
@@ -164,29 +145,6 @@
 				],
 				"name": "Transfer",
 				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "src",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "wad",
-						"type": "uint256"
-					}
-				],
-				"name": "Withdraw",
-				"type": "event"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "fallback"
 			},
 			{
 				"inputs": [
@@ -256,6 +214,38 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "decimals",
 				"outputs": [
@@ -269,10 +259,16 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "deposit",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "mint",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -304,6 +300,19 @@
 			{
 				"inputs": [],
 				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupplys",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -366,23 +375,6 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "withdraw",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -488,7 +480,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/t3_weth.sol": "WETH"
+			"contracts/tmp_erc20_01.sol": "ONE20"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -542,12 +534,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/t3_weth.sol": {
-			"keccak256": "0x43f8538dd6575c87fb360e7ff23e024f95d843fb8d200485a81313067225eaf7",
+		"contracts/tmp_erc20_01.sol": {
+			"keccak256": "0x68156b0d0e5f888ff8940e616eec3866f00969dd32814ca5487bc0ec3d891d00",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9023cb3ef98dd0aa2a513b759905aab0264931f7d7d17462f81ec3adb09ccbd3",
-				"dweb:/ipfs/QmVd8ZhPLgocwxNpGrdsTpwdTCQFNSLX3QbDwVmB1QcUn2"
+				"bzz-raw://9993757b8ee7631482f824107315a48416dce5f0370118f66b3eae0085f2a9c2",
+				"dweb:/ipfs/QmYAnHHgFyzMyQLsimZyfShnoddbhbuQUxmz53YP5YTdw6"
 			]
 		}
 	},
