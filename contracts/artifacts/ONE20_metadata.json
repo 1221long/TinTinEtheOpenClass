@@ -216,25 +216,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "balances",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
@@ -300,19 +281,6 @@
 			{
 				"inputs": [],
 				"name": "totalSupply",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "totalSupplys",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -535,11 +503,11 @@
 			]
 		},
 		"contracts/tmp_erc20_01.sol": {
-			"keccak256": "0x68156b0d0e5f888ff8940e616eec3866f00969dd32814ca5487bc0ec3d891d00",
+			"keccak256": "0xeebff6fb97310ff4339916c5a9b78ada05585709e6ac089ca7423fcb89464aa0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9993757b8ee7631482f824107315a48416dce5f0370118f66b3eae0085f2a9c2",
-				"dweb:/ipfs/QmYAnHHgFyzMyQLsimZyfShnoddbhbuQUxmz53YP5YTdw6"
+				"bzz-raw://04b7827b95dee978b53c6112b2a20ff2baad1360419c8c9cedff1864e74c9b04",
+				"dweb:/ipfs/QmZGn3v9pJQudHnAs5SnwW28Vr4C6scWsCPdf5m5yQbdv4"
 			]
 		}
 	},

@@ -738,11 +738,11 @@
 			]
 		},
 		"contracts/t3_waa.sol": {
-			"keccak256": "0x3127dc2efa79167ea1516287ba0716195ba94f5cf7709a41dfeaefa6a608799c",
+			"keccak256": "0x0e2b2665110b68397a05287a2c3eac077d51b5e2e894fa89148d2c668d41069c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://dd035debc6c68660b34836123d1526edb911506800d82753d6c6ad2b8ff883dc",
-				"dweb:/ipfs/QmaL51BBJ2ogZbyh91fFTAGVQ7MEaJau49ELZLpw6WPsJn"
+				"bzz-raw://fd408a047a787a8844066ad3e48e7f29895c01a18b85923b361797103724dd31",
+				"dweb:/ipfs/QmfDLfL6ZqqMJwXiMxn7Q1nST5F8HGkoAFiPkrsp8njaxf"
 			]
 		}
 	},

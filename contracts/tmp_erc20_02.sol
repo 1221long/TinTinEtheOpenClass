@@ -6,24 +6,16 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract TWO20 is ERC20 {
 
-    mapping(address => uint256) public balances;
-
-    uint256 public totalSupplys;
-
     constructor() ERC20("TWO20","TWO20"){
 
     }
 
     function mint(uint amount) external {
-        balances[msg.sender] += amount;
-        totalSupplys += amount;
-        emit Transfer(address(this), msg.sender, amount);
+        _mint(msg.sender, amount);
     }
 
     function burn(uint amount) external {
-        balances[msg.sender] -= amount;
-        totalSupplys -= amount;
-        emit Transfer(msg.sender, address(this), amount);
+        _burn(msg.sender, amount);
     }
 
     // // contract 
